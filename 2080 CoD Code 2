@@ -2283,6 +2283,7 @@ cyoAdventure = function (a) {
 			break;
 		case 23.03:
 			imageslide("https://i.imgur.com/Riexfju.png", true, "jackson_theme");
+			unlockAchievement("A Meeting of Two Women");
 			break;
 		case 24.01:
 			warscore -= 1;
@@ -20948,7 +20949,7 @@ slide_image_dict = {
 	"one_nation_under_god": "https://i.imgur.com/svJz4Dj.png",
 	"one_nation_under_liberty": "https://i.imgur.com/svJz4Dj.png",
 		
-	"temperance": "https://i.imgur.com/ofaToX1.png",
+	"temperance": "https://i.imgur.com/QkVEZWd.png",
 	"jackson_retirement": "https://i.imgur.com/J7YFi6F.png",
 	"human_condition": "https://i.imgur.com/TOrYloL.png",
 	
@@ -21055,10 +21056,13 @@ endingPicker = (out, totv, aa, quickstats) => {
 			if (dict_max(ev_dict) != 300) {
 				if (crowder_moralist_meeting_flag == "confirmed") {
 					add_slide("crowder_loss_bittersweet");
+					unlockAchievement("Eternal Losers");
 				} else {
 					add_slide("crowder_loss_bitter");
+					unlockAchievement("Silver Lining");
 				}
 			} else if (dict_max(ev_dict) == 300) {
+				unlockAchievement("Rebirth of Hope");
 				add_slide("progressive_rebirth");
 				add_slide("progressive_headwinds");
 				add_slide("jackson_crowder");
@@ -21066,27 +21070,34 @@ endingPicker = (out, totv, aa, quickstats) => {
 		} else if (jacksonist_candidate == "jackson") {
 			if (jackson_auth_flag == "true") {
 				if (civil_war_flag == "true") {
+					unlockAchievement("2nd American Civil War");
 					add_slide("second_american_civil_war");
 				} else {
+					unlockAchievement("Thus Always to Tyrants");
 					add_slide("thus_always_to_tyrants");
 				}
 			} else {
 				if (dict_max(ev_dict) == 301) {
 					if (auth_persecution_target == "moralist") {
+						unlockAchievement("Evangelical Reaction");
 						add_slide("reaction");
 						add_slide("grows_wild");
 					} else {
+						unlockAchievement("Half Measures");
 						add_slide("half_measures");
 					}
 				} else if (dict_max(ev_dict) == 304) {
+					unlockAchievement("Compromise of Coalitions");
 					add_slide("dem_opp_win");
 				} else if (dict_max(ev_dict) == 300) {
-					if (auth_persecution_target == "unset") {
-						add_slide("the_burden_of_duty");
-						add_slide("father_of_the_american_nation");
-					} else {
+					if (ev_dict[300] > 380 && auth_persecution_target != "unset") {
+						unlockAchievement("Triumph of the Will");
 						add_slide("triumph_of_the_will");
 						add_slide("fairness_doctrine");
+					} else {
+						unlockAchievement("The Burden of Duty");
+						add_slide("the_burden_of_duty");
+						add_slide("father_of_the_american_nation");
 					}
 				}
 			}
@@ -21094,6 +21105,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 			if (dict_max(ev_dict) != 300) {
 				add_slide("bernie_loss");
 			} else {
+				unlockAchievement("How We Still Win");
 				add_slide("sanders_victory");	
 				add_slide("sanders_patriotcare");			
 			}
@@ -21101,6 +21113,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 			if (dict_max(ev_dict) != 300) {
 				add_slide("jacksonist_loss");
 			} else if (ev_dict[300] >= 350){
+				unlockAchievement("America Triumphant");
 				add_slide("america_triumphant");
 				add_slide("starship_troopers");
 				add_slide("moralist_volunteer");
@@ -21121,6 +21134,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 	} else if (player_faction == "moralist") {
 		if (ev_dict[301] >= 270) {
 			if (constitutional_flag == "true") {
+				unlockAchievement("America Reborn");
 				add_slide("born_again");
 				add_slide(constitutional_1);
 				add_slide(constitutional_2);
@@ -21130,11 +21144,13 @@ endingPicker = (out, totv, aa, quickstats) => {
 				add_slide("diadem");
 				add_slide("last_settlements");
 			} else if (theocracy >= moderation) {
+				unlockAchievement("Evangelical Zeal");
 				add_slide("awakened");
 				if (ev_dict[301] >= 400) {
 					add_slide("icarusian_man");
 					add_slide("anti_utopia");
 					add_slide("drowning");
+					unlockAchievement("Burned by Idealism");
 				} else {
 					if (moralist_culture_success == "true") {
 						add_slide("hegemony");
@@ -21149,10 +21165,12 @@ endingPicker = (out, totv, aa, quickstats) => {
 					}
 				}
 			} else if (moderation >= theocracy) {
+				unlockAchievement("On An Even Keel");
 				add_slide("temperance");
 				if (ev_dict[301] >= 400) {
 					add_slide("jackson_retirement");
 					add_slide("human_condition");
+					unlockAchievement("Imago Dei");
 				} else {
 					if (moralist_culture_success == "true") {
 						add_slide("hegemony");
