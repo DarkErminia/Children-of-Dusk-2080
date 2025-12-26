@@ -143,7 +143,7 @@ campaignTrail_temp.election_json = [
             "image_url": "https://i.imgur.com/c8OqvzK.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "123",
-            "recommended_reading": "",
+            "recommended_reading": `<div style="overflow-y:auto; background: white; color: black; text-align: left; height: 300px; padding: 10px;">This mod is a part of a larger project known as Children of Dusk. The Children of Dusk universe is a worldbuilding project started in 2021, originally intended to be a prediction of the future. As time has gone on, it has increasingly diverged from our own world, but is still intended as a vision of what could be, or perhaps a warning.<br><br>The project's subreddit can be found <a style="color:#00abff;" href="https://www.reddit.com/r/childrenofdusk/">here</a>. Also check out our Discord server <a style="color:#00abff;" href="https://discord.gg/3rDzd7UdTy">here</a>.<br><br><a style="color:#00abff;" href="https://www.reddit.com/r/AlternateHistory/comments/1pu56rz/infographic_american_politics_of_20802128/">An infographic explaining American politics in this era.</a><br><br><a style="color:#00abff;" href="https://www.biblegateway.com/passage/?search=Genesis%201&version=ESV">The Holy Bible</a></div>`,
             "has_visits": 1,
             "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
         }
